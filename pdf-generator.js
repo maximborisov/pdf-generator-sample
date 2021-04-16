@@ -6,7 +6,7 @@ const handlebars = require("handlebars");
 async function createPDF(data){
 
 	//var templateHtml = fs.readFileSync(path.join(process.cwd(), 'template.html'), 'utf8');
-	var templateHtml = fs.readFileSync(path.join(process.cwd(), 'f119.html'), 'utf8');
+	var templateHtml = fs.readFileSync(path.join(process.cwd(), 'f119_back.html'), 'utf8');
 	// handlebars.registerHelper('isNewPage', function (index) {
 	// 	return index % 4 === 0;
 	//   });
@@ -42,7 +42,8 @@ async function createPDF(data){
 
 	const browser = await puppeteer.launch({
 		args: ['--no-sandbox'],
-		headless: true
+		headless: true,
+		defaultViewport: null
 	});
 
 	var page = await browser.newPage();
@@ -70,9 +71,27 @@ const data = {
 		{
 			f119: [
 				{
-					barcode: '14089207000016',
+					barcode1: '1',
+					barcode2: '4',
+					barcode3: '0',
+					barcode4: '8',
+					barcode5: '9',
+					barcode6: '2',
+					barcode7: '0',
+					barcode8: '7',
+					barcode9: '0',
+					barcode10: '0',
+					barcode11: '0',
+					barcode12: '0',
+					barcode13: '1',
+					barcode14: '6',
 					sender_name: 'Иванов Иван Иванович',
-					sender_index: '115516',
+					sender_index1: '1',
+					sender_index2: '1',
+					sender_index3: '5',
+					sender_index4: '5',
+					sender_index5: '1',
+					sender_index6: '6',
 					sender_address: '350010, Краснодарский край, г Краснодар, ул Длинная (Садовое товарищество Любитель), д 32',
 					sender_note: 'Вариант № 2 (99х144  - отступ сверху 1мм)',
 					simple_notice: true,
@@ -94,7 +113,20 @@ const data = {
 					recipient_address: 'НИЖНЕКАМСК ТАТАРСТАН РЕСПУБЛИКА 423570',
 				},
 				{
-					barcode: '14089207000016',
+					barcode1: '1',
+					barcode2: '4',
+					barcode3: '0',
+					barcode4: '8',
+					barcode5: '9',
+					barcode6: '2',
+					barcode7: '0',
+					barcode8: '7',
+					barcode9: '0',
+					barcode10: '0',
+					barcode11: '0',
+					barcode12: '0',
+					barcode13: '1',
+					barcode14: '6',
 					sender_name: 'Иванов Иван Иванович',
 					sender_index: '115516',
 					sender_address: '350010, Краснодарский край, г Краснодар, ул Длинная (Садовое товарищество Любитель), д 32',
@@ -118,7 +150,20 @@ const data = {
 					recipient_address: 'НИЖНЕКАМСК ТАТАРСТАН РЕСПУБЛИКА 423570',
 				},
 				{
-					barcode: '14089207000016',
+					barcode1: '1',
+					barcode2: '4',
+					barcode3: '0',
+					barcode4: '8',
+					barcode5: '9',
+					barcode6: '2',
+					barcode7: '0',
+					barcode8: '7',
+					barcode9: '0',
+					barcode10: '0',
+					barcode11: '0',
+					barcode12: '0',
+					barcode13: '1',
+					barcode14: '6',
 					sender_name: 'Иванов Иван Иванович',
 					sender_index: '115516',
 					sender_address: '350010, Краснодарский край, г Краснодар, ул Длинная (Садовое товарищество Любитель), д 32',
@@ -142,7 +187,20 @@ const data = {
 					recipient_address: 'НИЖНЕКАМСК ТАТАРСТАН РЕСПУБЛИКА 423570',
 				},
 				{
-					barcode: '14089207000016',
+					barcode1: '1',
+					barcode2: '4',
+					barcode3: '0',
+					barcode4: '8',
+					barcode5: '9',
+					barcode6: '2',
+					barcode7: '0',
+					barcode8: '7',
+					barcode9: '0',
+					barcode10: '0',
+					barcode11: '0',
+					barcode12: '0',
+					barcode13: '1',
+					barcode14: '6',
 					sender_name: 'Иванов Иван Иванович',
 					sender_index: '115516',
 					sender_address: '350010, Краснодарский край, г Краснодар, ул Длинная (Садовое товарищество Любитель), д 32',
@@ -170,7 +228,20 @@ const data = {
 		{
 			f119: [
 				{
-					barcode: '14089207000016',
+					barcode1: '1',
+					barcode2: '4',
+					barcode3: '0',
+					barcode4: '8',
+					barcode5: '9',
+					barcode6: '2',
+					barcode7: '0',
+					barcode8: '7',
+					barcode9: '0',
+					barcode10: '0',
+					barcode11: '0',
+					barcode12: '0',
+					barcode13: '1',
+					barcode14: '6',
 					sender_name: 'Иванов Иван Иванович',
 					sender_index: '115516',
 					sender_address: '350010, Краснодарский край, г Краснодар, ул Длинная (Садовое товарищество Любитель), д 32',

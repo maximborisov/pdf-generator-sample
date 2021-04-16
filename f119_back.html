@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    body {
+      background: white;
+    }
+
+    page {
+      background: white;
+      
+      /* display: block;
+      margin-top: 4.5mm;
+      margin-bottom: 4.5mm;
+      margin-left: 5mm;
+      margin-right: 5mm; */
+    }
+
+    table {
+      border-collapse: collapse;
+      margin: 0px;
+      padding: 0px;
+    }
+
+    td {
+      margin: 0px;
+      padding: 0px;
+    }
+
+    page[size="A4"][layout="landscape"] {
+      width: 297mm;
+      height: 210mm;
+    }
+
+    .wrapper {
+      display: block;
+      font-size: 12pt;
+      line-height: 20px;
+      background-image: repeating-linear-gradient(to right, transparent 1px, rgb(255, 255, 255) 2px), -webkit-linear-gradient(top, transparent, transparent 19px, rgb(0, 0, 0) 1px);
+      background-size: 100% 20px;
+    }
+
+    .flex-container {
+      display: flex;
+      flex-flow: row wrap;
+      /* justify-content: space-around; */
+      border: 0px solid black;
+      width: 287mm;
+      height: 200mm;
+      margin: 5mm;
+    }
+
+    .digital_td {
+      width: 5mm;
+      height: 5mm;
+      /* border: 1px solid black; */
+      border-left: 1px solid black;
+      border-top: 1px solid black;
+      border-right: 1px solid black;
+      /* border-bottom: 1px solid black; */
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  {{#each pages}}
+  <page size="A4" layout="landscape">
+    <div class="flex-container">
+      {{#each f119}}
+      {{#with this}}
+      <table>
+        <tr>
+          <td valign="top" style="
+            height: 100mm;
+            width: 130mm;
+            border-left: 0.5px dashed black;
+            border-right: 0.5px dashed black;
+            border-top: 0.5px solid black;
+            border-bottom: 0.5px solid black
+            ">
+            <table style="margin-top: 2mm;">
+              <tr>
+                <td style="
+              height: 5mm;
+              width: 3mm;
+              ">
+                  &nbsp;
+                </td>
+                <td style="
+              height: 5mm;
+              width: 53mm;
+              font-family: 'Arial';
+              font-size: 11pt;
+              text-align: left;
+              padding-left: 3mm;
+              border-bottom: 1px solid black;
+              ">
+                  почтовое отправление №:
+                </td>
+                <td align="right" style="
+              height: 5mm;
+              width: 71mm;
+              font-family: 'Arial';
+              font-weight: bold;
+              font-size: 10pt;
+              border-bottom: 1px solid black;
+              ">
+                  <table>
+                    <tr>
+                      <td class="digital_td">
+                        {{barcode1}}
+                      </td>
+                      <td class="digital_td">
+                        {{barcode2}}
+                      </td>
+                      <td class="digital_td">
+                        {{barcode3}}
+                      </td>
+                      <td class="digital_td">
+                        {{barcode4}}
+                      </td>
+                      <td class="digital_td">
+                        {{barcode5}}
+                      </td>
+                      <td class="digital_td">
+                        {{barcode6}}
+                      </td>
+                      <td class="digital_td">
+                        {{barcode7}}
+                      </td>
+                      <td class="digital_td">
+                        {{barcode8}}
+                      </td>
+                      <td class="digital_td">
+                        {{barcode9}}
+                      </td>
+                      <td class="digital_td">
+                        {{barcode10}}
+                      </td>
+                      <td class="digital_td">
+                        {{barcode11}}
+                      </td>
+                      <td class="digital_td">
+                        {{barcode12}}
+                      </td>
+                      <td class="digital_td">
+                        {{barcode13}}
+                      </td>
+                      <td class="digital_td">
+                        {{barcode14}}
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+                <td style="
+              height: 5mm;
+              width: 3mm;
+              ">
+                  &nbsp;
+                </td>
+              </tr>
+            </table>
+            <table style="
+          width: 100%;
+          ">
+              <tr>
+                <td style="
+              height: 4.5mm;
+              font-family: 'Arial';
+              font-style: italic;
+              font-size: 8pt;
+              text-align: center;
+              ">
+                  Обведенное жирной чертой заполняется отправителем
+                </td>
+              </tr>
+            </table>
+            <table>
+              <tr>
+                <td rowspan="2" style="
+                  height: 28mm;
+                  width: 3mm;
+                  ">
+                  &nbsp;
+                </td>
+                <td valign="top" style="
+                  height: 28mm;
+                  width: 124mm;
+                  border: 0.5pt solid black;
+                  ">
+                  <table style="width: 100%; margin: 1mm;">
+                    <tr>
+                      <td style="
+                    width: 18mm;
+                    font-size: 8pt;
+                    vertical-align: top;
+                    ">
+                        {{#if letter}}
+                        <div style="border: 0px solid gray; margin: 0px; padding: 0px;">
+                          <img style="border: 1px solid gray;" width="9px" height="9px"
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAC1QTFRFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////wR4OLAAAAA10Uk5TAAVE7/FuBPDyA3D3+OyJokQAAAABYktHRA5vvTBPAAAACXBIWXMAATr2AAE69gE6sVc6AAAAa0lEQVQoz2NgoBcQUkSlGZRdE0AUW4gRVED9RhiISu0tggqk9rYClbBFQMQZYEyIMEIJkgKwkkhkBSAlXSuQFICU3N6LrICBYdbZOysZ8AlgaEE3FGTtVGRr0R2G4XQMz2F4HyOAMIKQ9gAAve42ZxV3sKIAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTktMTItMThUMTc6MzI6MjcrMDA6MDDLnRxVAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE5LTEyLTE4VDE3OjMyOjI3KzAwOjAwusCk6QAAAEZ0RVh0c29mdHdhcmUASW1hZ2VNYWdpY2sgNi43LjgtOSAyMDE5LTAyLTAxIFExNiBodHRwOi8vd3d3LmltYWdlbWFnaWNrLm9yZ0F74sgAAAAYdEVYdFRodW1iOjpEb2N1bWVudDo6UGFnZXMAMaf/uy8AAAAYdEVYdFRodW1iOjpJbWFnZTo6aGVpZ2h0ADUxMsDQUFEAAAAXdEVYdFRodW1iOjpJbWFnZTo6V2lkdGgANTEyHHwD3AAAABl0RVh0VGh1bWI6Ok1pbWV0eXBlAGltYWdlL3BuZz+yVk4AAAAXdEVYdFRodW1iOjpNVGltZQAxNTc2NjkwMzQ3cZAQFwAAABJ0RVh0VGh1bWI6OlNpemUAMy45S0JCZp6JngAAAEd0RVh0VGh1bWI6OlVSSQBmaWxlOi8vLi91cGxvYWRzLzU2L1Z2ajg0MngvMjA5OC9jbG9zZV9jcm9zc19pY29uXzEyODY5MC5wbmc605WkAAAAAElFTkSuQmCC" />
+                          Письма
+                        </div>
+                        {{else}}
+                        <div style="border: 0px solid gray; margin: 0px; padding: 0px;">
+                          <img style="border: 1px solid gray;" width="9px" height="9px"
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAMSURBVBhXY/j//z8ABf4C/qc1gYQAAAAASUVORK5CYII=" />
+                          Письма
+                        </div>
+                        {{/if}}
+                      </td>
+                      <td style="
+                    width: 24mm;
+                    font-size: 8pt;
+                    vertical-align: top;
+                    ">
+                        {{#if wrapper}}
+                        <div style="border: 0px solid gray; margin: 0px; padding: 0px;">
+                          <img style="border: 1px solid gray;" width="9px" height="9px"
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAC1QTFRFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////wR4OLAAAAA10Uk5TAAVE7/FuBPDyA3D3+OyJokQAAAABYktHRA5vvTBPAAAACXBIWXMAATr2AAE69gE6sVc6AAAAa0lEQVQoz2NgoBcQUkSlGZRdE0AUW4gRVED9RhiISu0tggqk9rYClbBFQMQZYEyIMEIJkgKwkkhkBSAlXSuQFICU3N6LrICBYdbZOysZ8AlgaEE3FGTtVGRr0R2G4XQMz2F4HyOAMIKQ9gAAve42ZxV3sKIAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTktMTItMThUMTc6MzI6MjcrMDA6MDDLnRxVAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE5LTEyLTE4VDE3OjMyOjI3KzAwOjAwusCk6QAAAEZ0RVh0c29mdHdhcmUASW1hZ2VNYWdpY2sgNi43LjgtOSAyMDE5LTAyLTAxIFExNiBodHRwOi8vd3d3LmltYWdlbWFnaWNrLm9yZ0F74sgAAAAYdEVYdFRodW1iOjpEb2N1bWVudDo6UGFnZXMAMaf/uy8AAAAYdEVYdFRodW1iOjpJbWFnZTo6aGVpZ2h0ADUxMsDQUFEAAAAXdEVYdFRodW1iOjpJbWFnZTo6V2lkdGgANTEyHHwD3AAAABl0RVh0VGh1bWI6Ok1pbWV0eXBlAGltYWdlL3BuZz+yVk4AAAAXdEVYdFRodW1iOjpNVGltZQAxNTc2NjkwMzQ3cZAQFwAAABJ0RVh0VGh1bWI6OlNpemUAMy45S0JCZp6JngAAAEd0RVh0VGh1bWI6OlVSSQBmaWxlOi8vLi91cGxvYWRzLzU2L1Z2ajg0MngvMjA5OC9jbG9zZV9jcm9zc19pY29uXzEyODY5MC5wbmc605WkAAAAAElFTkSuQmCC" />
+                          Бандероли
+                        </div>
+                        {{else}}
+                        <div style="border: 0px solid gray; margin: 0px; padding: 0px;">
+                          <img style="border: 1px solid gray;" width="9px" height="9px"
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAMSURBVBhXY/j//z8ABf4C/qc1gYQAAAAASUVORK5CYII=" />
+                          Бандероли
+                        </div>
+                        {{/if}}
+                      </td>
+                      <td style="
+                    width: 19mm;
+                    font-size: 8pt;
+                    vertical-align: top;
+                    ">
+                        {{#if parcel}}
+                        <div style="border: 0px solid gray; margin: 0px; padding: 0px;">
+                          <img style="border: 1px solid gray;" width="9px" height="9px"
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAC1QTFRFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////wR4OLAAAAA10Uk5TAAVE7/FuBPDyA3D3+OyJokQAAAABYktHRA5vvTBPAAAACXBIWXMAATr2AAE69gE6sVc6AAAAa0lEQVQoz2NgoBcQUkSlGZRdE0AUW4gRVED9RhiISu0tggqk9rYClbBFQMQZYEyIMEIJkgKwkkhkBSAlXSuQFICU3N6LrICBYdbZOysZ8AlgaEE3FGTtVGRr0R2G4XQMz2F4HyOAMIKQ9gAAve42ZxV3sKIAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTktMTItMThUMTc6MzI6MjcrMDA6MDDLnRxVAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE5LTEyLTE4VDE3OjMyOjI3KzAwOjAwusCk6QAAAEZ0RVh0c29mdHdhcmUASW1hZ2VNYWdpY2sgNi43LjgtOSAyMDE5LTAyLTAxIFExNiBodHRwOi8vd3d3LmltYWdlbWFnaWNrLm9yZ0F74sgAAAAYdEVYdFRodW1iOjpEb2N1bWVudDo6UGFnZXMAMaf/uy8AAAAYdEVYdFRodW1iOjpJbWFnZTo6aGVpZ2h0ADUxMsDQUFEAAAAXdEVYdFRodW1iOjpJbWFnZTo6V2lkdGgANTEyHHwD3AAAABl0RVh0VGh1bWI6Ok1pbWV0eXBlAGltYWdlL3BuZz+yVk4AAAAXdEVYdFRodW1iOjpNVGltZQAxNTc2NjkwMzQ3cZAQFwAAABJ0RVh0VGh1bWI6OlNpemUAMy45S0JCZp6JngAAAEd0RVh0VGh1bWI6OlVSSQBmaWxlOi8vLi91cGxvYWRzLzU2L1Z2ajg0MngvMjA5OC9jbG9zZV9jcm9zc19pY29uXzEyODY5MC5wbmc605WkAAAAAElFTkSuQmCC" />
+                          Посылки
+                        </div>
+                        {{else}}
+                        <div style="border: 0px solid gray; margin: 0px; padding: 0px;">
+                          <img style="border: 1px solid gray;" width="9px" height="9px"
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAMSURBVBhXY/j//z8ABf4C/qc1gYQAAAAASUVORK5CYII=" />
+                          Посылки
+                        </div>
+                        {{/if}}
+                      </td>
+                      <td style="
+                    width: 21mm;
+                    font-size: 8pt;
+                    vertical-align: top;
+                    ">
+                        {{#if first_class_departure}}
+                        <div
+                          style="border: 0px solid gray; margin: 0px; padding: 0px; display: flex; align-items: flex-start;">
+                          <img style="border: 1px solid gray; vertical-align:top;" width="9px" height="9px"
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAC1QTFRFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////wR4OLAAAAA10Uk5TAAVE7/FuBPDyA3D3+OyJokQAAAABYktHRA5vvTBPAAAACXBIWXMAATr2AAE69gE6sVc6AAAAa0lEQVQoz2NgoBcQUkSlGZRdE0AUW4gRVED9RhiISu0tggqk9rYClbBFQMQZYEyIMEIJkgKwkkhkBSAlXSuQFICU3N6LrICBYdbZOysZ8AlgaEE3FGTtVGRr0R2G4XQMz2F4HyOAMIKQ9gAAve42ZxV3sKIAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTktMTItMThUMTc6MzI6MjcrMDA6MDDLnRxVAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE5LTEyLTE4VDE3OjMyOjI3KzAwOjAwusCk6QAAAEZ0RVh0c29mdHdhcmUASW1hZ2VNYWdpY2sgNi43LjgtOSAyMDE5LTAyLTAxIFExNiBodHRwOi8vd3d3LmltYWdlbWFnaWNrLm9yZ0F74sgAAAAYdEVYdFRodW1iOjpEb2N1bWVudDo6UGFnZXMAMaf/uy8AAAAYdEVYdFRodW1iOjpJbWFnZTo6aGVpZ2h0ADUxMsDQUFEAAAAXdEVYdFRodW1iOjpJbWFnZTo6V2lkdGgANTEyHHwD3AAAABl0RVh0VGh1bWI6Ok1pbWV0eXBlAGltYWdlL3BuZz+yVk4AAAAXdEVYdFRodW1iOjpNVGltZQAxNTc2NjkwMzQ3cZAQFwAAABJ0RVh0VGh1bWI6OlNpemUAMy45S0JCZp6JngAAAEd0RVh0VGh1bWI6OlVSSQBmaWxlOi8vLi91cGxvYWRzLzU2L1Z2ajg0MngvMjA5OC9jbG9zZV9jcm9zc19pY29uXzEyODY5MC5wbmc605WkAAAAAElFTkSuQmCC" />
+                          &nbsp;Отправления 1 класса
+                        </div>
+                        {{else}}
+                        <div
+                          style="border: 0px solid gray; margin: 0px; padding: 0px; display: flex; align-items: flex-start;">
+                          <img style="border: 1px solid gray; vertical-align:top;" width="9px" height="9px"
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAMSURBVBhXY/j//z8ABf4C/qc1gYQAAAAASUVORK5CYII=" />
+                          &nbsp;Отправления 1 класса
+                        </div>
+                        {{/if}}
+                      </td>
+                      <td style="
+                    width: 3mm;
+                    font-size: 8pt;
+                    vertical-align: top;
+                    ">
+                        &nbsp;
+                      </td>
+                    </tr>
+                  </table>
+                  <table style="width: 100%; margin: 1mm;">
+                    <tr>
+                      <td style="
+                    width: 27mm;
+                    font-size: 8pt;
+                    vertical-align: top;
+                    ">
+                        {{#if registered}}
+                        <div style="border: 0px solid gray; margin: 0px; padding: 0px;">
+                          <img style="border: 1px solid gray;" width="9px" height="9px"
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAC1QTFRFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////wR4OLAAAAA10Uk5TAAVE7/FuBPDyA3D3+OyJokQAAAABYktHRA5vvTBPAAAACXBIWXMAATr2AAE69gE6sVc6AAAAa0lEQVQoz2NgoBcQUkSlGZRdE0AUW4gRVED9RhiISu0tggqk9rYClbBFQMQZYEyIMEIJkgKwkkhkBSAlXSuQFICU3N6LrICBYdbZOysZ8AlgaEE3FGTtVGRr0R2G4XQMz2F4HyOAMIKQ9gAAve42ZxV3sKIAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTktMTItMThUMTc6MzI6MjcrMDA6MDDLnRxVAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE5LTEyLTE4VDE3OjMyOjI3KzAwOjAwusCk6QAAAEZ0RVh0c29mdHdhcmUASW1hZ2VNYWdpY2sgNi43LjgtOSAyMDE5LTAyLTAxIFExNiBodHRwOi8vd3d3LmltYWdlbWFnaWNrLm9yZ0F74sgAAAAYdEVYdFRodW1iOjpEb2N1bWVudDo6UGFnZXMAMaf/uy8AAAAYdEVYdFRodW1iOjpJbWFnZTo6aGVpZ2h0ADUxMsDQUFEAAAAXdEVYdFRodW1iOjpJbWFnZTo6V2lkdGgANTEyHHwD3AAAABl0RVh0VGh1bWI6Ok1pbWV0eXBlAGltYWdlL3BuZz+yVk4AAAAXdEVYdFRodW1iOjpNVGltZQAxNTc2NjkwMzQ3cZAQFwAAABJ0RVh0VGh1bWI6OlNpemUAMy45S0JCZp6JngAAAEd0RVh0VGh1bWI6OlVSSQBmaWxlOi8vLi91cGxvYWRzLzU2L1Z2ajg0MngvMjA5OC9jbG9zZV9jcm9zc19pY29uXzEyODY5MC5wbmc605WkAAAAAElFTkSuQmCC" />
+                          Заказного(ой)
+                        </div>
+                        {{else}}
+                        <div style="border: 0px solid gray; margin: 0px; padding: 0px;">
+                          <img style="border: 1px solid gray;" width="9px" height="9px"
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAMSURBVBhXY/j//z8ABf4C/qc1gYQAAAAASUVORK5CYII=" />
+                          Заказного(ой)
+                        </div>
+                        {{/if}}
+                      </td>
+                      <td style="
+                    width: 27mm;
+                    font-size: 8pt;
+                    vertical-align: top;
+                    ">
+                        {{#if declared_value}}
+                        <div
+                          style="border: 0px solid gray; margin: 0px; padding: 0px; display: flex; align-items: flex-start;">
+                          <img style="border: 1px solid gray; vertical-align:top;" width="9px" height="9px"
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAC1QTFRFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////wR4OLAAAAA10Uk5TAAVE7/FuBPDyA3D3+OyJokQAAAABYktHRA5vvTBPAAAACXBIWXMAATr2AAE69gE6sVc6AAAAa0lEQVQoz2NgoBcQUkSlGZRdE0AUW4gRVED9RhiISu0tggqk9rYClbBFQMQZYEyIMEIJkgKwkkhkBSAlXSuQFICU3N6LrICBYdbZOysZ8AlgaEE3FGTtVGRr0R2G4XQMz2F4HyOAMIKQ9gAAve42ZxV3sKIAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTktMTItMThUMTc6MzI6MjcrMDA6MDDLnRxVAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE5LTEyLTE4VDE3OjMyOjI3KzAwOjAwusCk6QAAAEZ0RVh0c29mdHdhcmUASW1hZ2VNYWdpY2sgNi43LjgtOSAyMDE5LTAyLTAxIFExNiBodHRwOi8vd3d3LmltYWdlbWFnaWNrLm9yZ0F74sgAAAAYdEVYdFRodW1iOjpEb2N1bWVudDo6UGFnZXMAMaf/uy8AAAAYdEVYdFRodW1iOjpJbWFnZTo6aGVpZ2h0ADUxMsDQUFEAAAAXdEVYdFRodW1iOjpJbWFnZTo6V2lkdGgANTEyHHwD3AAAABl0RVh0VGh1bWI6Ok1pbWV0eXBlAGltYWdlL3BuZz+yVk4AAAAXdEVYdFRodW1iOjpNVGltZQAxNTc2NjkwMzQ3cZAQFwAAABJ0RVh0VGh1bWI6OlNpemUAMy45S0JCZp6JngAAAEd0RVh0VGh1bWI6OlVSSQBmaWxlOi8vLi91cGxvYWRzLzU2L1Z2ajg0MngvMjA5OC9jbG9zZV9jcm9zc19pY29uXzEyODY5MC5wbmc605WkAAAAAElFTkSuQmCC" />
+                          &nbsp;С объявленной ценностью
+                        </div>
+                        {{else}}
+                        <div
+                          style="border: 0px solid gray; margin: 0px; padding: 0px; display: flex; align-items: flex-start;">
+                          <img style="border: 1px solid gray; vertical-align:top;" width="9px" height="9px"
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAMSURBVBhXY/j//z8ABf4C/qc1gYQAAAAASUVORK5CYII=" />
+                          &nbsp;С объявленной ценностью
+                        </div>
+                        {{/if}}
+                      </td>
+                      <td style="
+                    width: 27mm;
+                    font-size: 8pt;
+                    vertical-align: top;
+                    ">
+                        {{#if ordinary}}
+                        <div style="border: 0px solid gray; margin: 0px; padding: 0px;">
+                          <img style="border: 1px solid gray;" width="9px" height="9px"
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAC1QTFRFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////wR4OLAAAAA10Uk5TAAVE7/FuBPDyA3D3+OyJokQAAAABYktHRA5vvTBPAAAACXBIWXMAATr2AAE69gE6sVc6AAAAa0lEQVQoz2NgoBcQUkSlGZRdE0AUW4gRVED9RhiISu0tggqk9rYClbBFQMQZYEyIMEIJkgKwkkhkBSAlXSuQFICU3N6LrICBYdbZOysZ8AlgaEE3FGTtVGRr0R2G4XQMz2F4HyOAMIKQ9gAAve42ZxV3sKIAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTktMTItMThUMTc6MzI6MjcrMDA6MDDLnRxVAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE5LTEyLTE4VDE3OjMyOjI3KzAwOjAwusCk6QAAAEZ0RVh0c29mdHdhcmUASW1hZ2VNYWdpY2sgNi43LjgtOSAyMDE5LTAyLTAxIFExNiBodHRwOi8vd3d3LmltYWdlbWFnaWNrLm9yZ0F74sgAAAAYdEVYdFRodW1iOjpEb2N1bWVudDo6UGFnZXMAMaf/uy8AAAAYdEVYdFRodW1iOjpJbWFnZTo6aGVpZ2h0ADUxMsDQUFEAAAAXdEVYdFRodW1iOjpJbWFnZTo6V2lkdGgANTEyHHwD3AAAABl0RVh0VGh1bWI6Ok1pbWV0eXBlAGltYWdlL3BuZz+yVk4AAAAXdEVYdFRodW1iOjpNVGltZQAxNTc2NjkwMzQ3cZAQFwAAABJ0RVh0VGh1bWI6OlNpemUAMy45S0JCZp6JngAAAEd0RVh0VGh1bWI6OlVSSQBmaWxlOi8vLi91cGxvYWRzLzU2L1Z2ajg0MngvMjA5OC9jbG9zZV9jcm9zc19pY29uXzEyODY5MC5wbmc605WkAAAAAElFTkSuQmCC" />
+                          Обыкновенной
+                        </div>
+                        {{else}}
+                        <div style="border: 0px solid gray; margin: 0px; padding: 0px;">
+                          <img style="border: 1px solid gray;" width="9px" height="9px"
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAMSURBVBhXY/j//z8ABf4C/qc1gYQAAAAASUVORK5CYII=" />
+                          Обыкновенной
+                        </div>
+                        {{/if}}
+                      </td>
+                      <td style="
+                    width: 7mm;
+                    ">
+                        &nbsp;
+                      </td>
+                    </tr>
+                  </table>
+                  <table style="width: 100%;">
+                    <tr>
+                      <td style="
+                    width: 15mm;
+                    padding-top: 2mm;
+                    padding-left: 0.3mm;
+                    font-family: arial;
+                    font-weight: bold;
+                    font-size: 11pt;
+                    vertical-align: top;
+                    ">
+                        адрес
+                      </td>
+                      <td style="
+                    width: 106mm;
+                    height: 9mm;
+                    ">
+                        <div style="width: 106mm; height: 40px;" class="wrapper">
+                          {{recipient_address}}&emsp;{{recipient_name}}</div>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+                <td rowspan="2" style="
+                  height: 28mm;
+                  width: 3mm;
+                  ">
+                  &nbsp;
+                </td>
+              </tr>
+              <tr>
+                <td align="right" style="
+                  border-left: 0.5pt solid black;
+                  border-bottom: 0.5pt solid black;
+                  border-right: 0.5pt solid black;
+                  font-family: Arial; font-weight: bold; font-size: 10pt; padding: 0px;
+                ">
+                  <table>
+                    <tr>
+                      <td
+                        style="width: 5mm; height: 5mm; border-left: 1px solid black; border-right: 1px solid black; text-align: center;">
+                        {{recipient_index1}}
+                      </td>
+                      <td
+                        style="width: 5mm; height: 5mm; border-left: 1px solid black; border-right: 1px solid black; text-align: center;">
+                        {{recipient_index2}}
+                      </td>
+                      <td
+                        style="width: 5mm; height: 5mm; border-left: 1px solid black; border-right: 1px solid black; text-align: center;">
+                        {{recipient_index3}}
+                      </td>
+                      <td
+                        style="width: 5mm; height: 5mm; border-left: 1px solid black; border-right: 1px solid black; text-align: center;">
+                        {{recipient_index4}}
+                      </td>
+                      <td
+                        style="width: 5mm; height: 5mm; border-left: 1px solid black; border-right: 1px solid black; text-align: center;">
+                        {{recipient_index5}}
+                      </td>
+                      <td style="width: 5mm; height: 5mm; border-left: 1px solid black; text-align: center;">
+                        {{recipient_index6}}
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            <table style="width: 100%;margin-top: 3mm;">
+              <tr>
+                <td style="width: 3mm;">
+                  &nbsp;
+                </td>
+                <td style="width: 52mm; font-size: 10pt;">
+                  Вручено "___"_______20___г.
+                </td>
+                <td style="width: 20mm; border-bottom: 1pt solid black; text-align: right; font-size: 10pt;">
+                  лично
+                </td>
+                <td style="width: 15mm; border-bottom: 1pt solid black;">
+                  <img style="border: 1px solid gray; margin-left: 1mm;" width="9px" height="9px"
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAMSURBVBhXY/j//z8ABf4C/qc1gYQAAAAASUVORK5CYII=" />
+                </td>
+                <td style="width: 2mm;">
+                  &nbsp;
+                </td>
+                <td style="width: 30mm; border-bottom: 1pt solid black;">
+                  &nbsp;
+                </td>
+                <td style="width: 3mm;">
+                  &nbsp;
+                </td>
+              </tr>
+            </table>
+            <table style="width: 100%;">
+              <tr>
+                <td style="width: 57mm;">
+                  &nbsp;
+                </td>
+                <td style="width: 24mm; font-size: 10pt; text-align: left;">
+                  по доверенности
+                </td>
+                <td style="width: 9mm;">
+                  <img style="border: 1px solid gray;" width="9px" height="9px"
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAMSURBVBhXY/j//z8ABf4C/qc1gYQAAAAASUVORK5CYII=" />
+                </td>
+                <td style="width: 30mm; text-align: center; font-size: 8pt;">
+                  (кому)
+                </td>
+              </tr>
+            </table>
+            <div style="font-size: 10pt; margin-left:3mm">
+              Получил
+            </div>
+            <table style="width: 100%;">
+              <tr>
+                <td style="width: 3mm;">
+                  &nbsp;
+                </td>
+                <td style="width: 14mm;">
+                  &nbsp;
+                </td>
+                <td style="width: 36mm; font-size: 8pt; text-align: center; border-top: 1pt solid black;">
+                  (подпись)
+                </td>
+                <td style="width: 4mm;">
+                  &nbsp;
+                </td>
+                <td style="width: 68mm; text-align: center; font-size: 8pt; border-top: 1pt solid black;">
+                  (ФИО)
+                </td>
+                <td style="width: 3mm;">
+                  &nbsp;
+                </td>
+              </tr>
+            </table>
+            <table style="width: 100%; margin-top: 1.5mm; margin-bottom: 1.5mm;">
+              <tr>
+                <td style="width: 40mm;">
+                  <table style="
+                width: 100%;
+                ">
+                    <tr>
+                      <td style="
+                    height: 25mm;
+                    width: 7mm;
+                    ">
+                        &nbsp;
+                      </td>
+                      <td style="
+                    height: 25mm;
+                    width: 25mm;
+                    border: 0.5px solid black;
+                    ">
+                        &nbsp;
+                      </td>
+                      <td style="
+                    height: 25mm;
+                    width: 7mm;
+                    ">
+                        &nbsp;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="3" style="font-size: 7pt; text-align: center;">
+                        (оттиск КПШ ОПС места<br />вручения уведомления)
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+                <td align="center" style="width: 49mm;">
+                  <div style="margin-top:7mm;">Руководитель ОПС:</div>
+                  <div style="margin-top:7mm;">_________________</div>
+                  <div style="font-size:8pt;">(подпись)</div>
+                </td>
+                <td style="width: 40mm;">
+                  <table style="
+                width: 100%;
+                ">
+                    <tr>
+                      <td style="
+                    height: 25mm;
+                    width: 7mm;
+                    ">
+                        &nbsp;
+                      </td>
+                      <td style="
+                    height: 25mm;
+                    width: 25mm;
+                    border: 0.5px solid black;
+                    ">
+                        &nbsp;
+                      </td>
+                      <td style="
+                    height: 25mm;
+                    width: 7mm;
+                    ">
+                        &nbsp;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="3" style="font-size: 7pt; text-align: center;">
+                        (оттиск КПШ ОПС места<br />оформления уведомления)
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+          <td style="
+            height: 100mm;
+            width: 9mm;
+            border-right: 1px dashed black;
+            border-top: 0.5px solid black;
+            border-bottom: 0.5px solid black;
+          ">
+            &nbsp;
+          </td>
+        </tr>
+      </table>
+      {{/with}}
+      {{/each}}
+    </div>
+  </page>
+  {{/each}}
+</body>
+
+</html>
