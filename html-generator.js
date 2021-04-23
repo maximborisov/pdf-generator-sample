@@ -42,7 +42,7 @@ async function createPDF(data) {
 
 	const browser = await puppeteer.launch({
 		args: ['--no-sandbox'],
-		headless: true,
+		headless: false,
 		defaultViewport: null
 	});
 
@@ -52,8 +52,8 @@ async function createPDF(data) {
 		waitUntil: 'networkidle0'
 	});
 
-	await page.pdf(options);
-	await browser.close();
+	// await page.pdf(options);
+	// await browser.close();
 }
 
 // const data = {

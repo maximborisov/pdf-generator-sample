@@ -2,6 +2,7 @@
 <html>
 
 <head>
+  <link rel="stylesheet" href="paper.css">
   <style>
     body {
       background: white;
@@ -31,7 +32,6 @@
     page[size="A4"][layout="landscape"] {
       width: 297mm;
       height: 210mm;
-      border: 1px solid red;
     }
 
     .wrapper {
@@ -47,15 +47,9 @@
       flex-flow: row wrap;
       /* justify-content: space-around; */
       border: 0px solid black;
-      /* width: 287mm;
-      height: 200mm; */
-      padding-top: 2.3mm;
-      padding-left: 5mm;
-      padding-bottom: 2.3mm;
-      padding-right: 2mm;
-      width: 283mm;
-      height: 205mm;
-      /* border: 1px solid red; */
+      width: 287mm;
+      height: 200mm;
+      margin: 5mm;
     }
 
     .digital_td {
@@ -68,12 +62,16 @@
       /* border-bottom: 1px solid black; */
       text-align: center;
     }
+
+    @page {
+      size: A4 landscape
+    }
   </style>
 </head>
 
-<body>
+<body class="A4 landscape">
   {{#each pages}}
-  <!-- <page size="A4" layout="landscape"> -->
+  <section class="sheet padding-20mm">
     <div class="flex-container">
       {{#each f119}}
       {{#with this}}
@@ -577,7 +575,7 @@
       {{/with}}
       {{/each}}
     </div>
-  <!-- </page> -->
+  </section>
   {{/each}}
 </body>
 
